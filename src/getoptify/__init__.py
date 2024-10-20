@@ -7,13 +7,6 @@ import click as _click
 __all__ = ["command", "decorator", "process"]
 
 
-def _longopt(x, /):
-    v = str(x)
-    if v == "" or v.startswith("-"):
-        raise ValueError("%r is not a valid longopt" % x)
-    return v
-
-
 def command(*_args, **_kwargs):
     return _functools.partial(decorator, *_args, **_kwargs)
 
@@ -32,7 +25,7 @@ def process(args=None, shortopts="", longopts=[], allow_argv=True, gnu=True):
         args = _sys.argv[1:]
     args = [str(x) for x in args]
     shortopts = str(shortopts)
-    longopts = [_longopt(x) for x in longopts]
+    longopts = [str(x) for x in longopts]
     if gnu:
         g = _getopt.gnu_getopt
     else:
