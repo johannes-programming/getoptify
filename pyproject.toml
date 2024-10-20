@@ -9,6 +9,7 @@ authors = [
     { email = "johannes-programming@mailfence.com", name = "Johannes" },
 ]
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
@@ -20,7 +21,7 @@ keywords = []
 name = "getoptify"
 readme = "README.rst"
 requires-python = ">=3.6"
-version = "1.0.1"
+version = "1.0.2"
 
 [project.license]
 file = "LICENSE.txt"
