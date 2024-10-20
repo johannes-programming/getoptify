@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>getoptify</title>
+        <link rel="stylesheet" href="https://www.johannes-programming.online/styles.css">
+    </head>
+    <body>
+        <div id="top"></div>
+        <div id="overview">
+            <h2>Overview</h2>
+            <p>
+                This project allows getopt parsing followed by deparsing, 
+                e.g. for allowing abbreviations with 
+                <a href="https://click.palletsprojects.com/">click</a>
+                or to enforce parser simplicity.
+            </p>
+        </div>
+        <div id="install"></div>
+        <div id="functions">
+            <h2>Functions</h2>
+            <code>
+                <pre>
+                    
+def command(*_args, **_kwargs):
+    return functools.partial(decorator, *_args, **_kwargs)
+
+def decorator(old, /, *_args, **_kwargs):
+    @functools.wraps(old)
+    def new(args=None):
+        args = process(args, *_args, **_kwargs)
+        return old(args)
+
+    return new
+
+def process(args=None, shortopts="", longopts=[], allow_argv=True, gnu=True):
+    ...
+    # this function is the heart of getoptify
+    # args are parsed using getopt and then converted back into a list of args
+    # allow_argv allows to default to sys.argv[1:] if args is None
+    # if gnu then getopt.gnu_getopt is used else getopt.getopt
+            </pre>
+        </code>
+        <h2>Recommended Usage</h2>
+        <code>
+            <pre>
+@getoptify.command(shortopts="h", longopts=["foo", "bar="])
+def example(args=None):
+    ...
+    # here internal parsing
+            
+            </pre>
+        </code>
+        <div id="testing"></div>
+        <div id="license"></div>
+        <div id="links"></div>
+        <div id="credits"></div>
+        <script src="https://www.johannes-programming.online/script.js"></script>
+        <script>
+            setupBasicProject('getoptify');
+        </script>
+    </body>
+</html>
