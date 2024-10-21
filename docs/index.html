@@ -20,7 +20,8 @@
         <div id="install"></div>
         <div id="functions">
             <h2>Functions</h2>
-            <pre><code>
+            <code>
+                <pre>
 def command(*_args, **_kwargs):
     return functools.partial(decorator, *_args, **_kwargs)
 
@@ -38,7 +39,9 @@ def process(args=None, shortopts="", longopts=[], allow_argv=True, gnu=True):
     # args are parsed using getopt and then converted back into a list of args
     # allow_argv allows to default to sys.argv[1:] if args is None
     # if gnu then getopt.gnu_getopt is used else getopt.getopt
-</code></pre>
+            
+            </pre>
+        </code>
         <h2>Recommended Usage</h2>
         <pre><code>
 @getoptify.command(shortopts="h", longopts=["foo", "bar="])
