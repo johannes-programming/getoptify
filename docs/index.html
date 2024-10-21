@@ -8,10 +8,19 @@
     </head>
     <body>
         <div id="top"></div>
-        <div id="overview"></div>
+        <div id="overview">
+            <h2>Overview</h2>
+            <p>
+                This project allows getopt parsing followed by deparsing, 
+                e.g. for allowing abbreviations with 
+                <a href="https://click.palletsprojects.com/">click</a>
+                or to enforce parser simplicity.
+            </p>
+        </div>
         <div id="install"></div>
-        <h2>Functions</h2>
-        <pre><code>
+        <div id="functions">
+            <h2>Functions</h2>
+            <pre><code>
 def command(*_args, **_kwargs):
     return functools.partial(decorator, *_args, **_kwargs)
 
