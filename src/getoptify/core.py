@@ -1,24 +1,36 @@
 import functools
 import getopt
 import sys
+from typing import *
+import types
 
 __all__ = ["command", "decorator", "process"]
 
 
-def command(*_args, **_kwargs):
+def command(
+        *_args:Any, 
+        **_kwargs:Any) -> functools.partial:
     return functools.partial(decorator, *_args, **_kwargs)
 
 
-def decorator(old, /, *_args, **_kwargs):
+def decorator(
+        old:Callable, /, 
+        *_args:Any, 
+        **_kwargs:Any) -> types.FunctionType:
     @functools.wraps(old)
-    def new(args=None):
+    def new(args:Any=None):
         args = process(args, *_args, **_kwargs)
         return old(args)
 
     return new
 
 
-def process(args=None, shortopts="", longopts=[], allow_argv=True, gnu=True):
+def process(
+        args:Optional[Iterable]=None, 
+        shortopts:Any="", 
+        longopts:Iterable=[], 
+        allow_argv:Any=True, 
+        gnu:Any=True) -> List[str]:
     if allow_argv and args is None:
         args = sys.argv[1:]
     args = [str(x) for x in args]
