@@ -24,7 +24,7 @@ keywords = []
 name = "getoptify"
 readme = "README.rst"
 requires-python = ">=3.6"
-version = "1.0.2+local"
+version = "1.0.2+local.1"
 
 [project.license]
 file = "LICENSE.txt"
