@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <title>getoptify</title>
     </head>
     <body>
-        <div id="top"></div>
-        <div id="overview">
-            <h2>Overview</h2>
-            <p>
-                This project allows getopt parsing followed by deparsing, 
-                e.g. for allowing abbreviations with 
-                <a href="https://click.palletsprojects.com/">click</a>
-                or to enforce parser simplicity.
-            </p>
-        </div>
-        <div id="install"></div>
-        <div id="functions">
-            <h2>Functions</h2>
-            <code>
-                <pre>
-                    
-def command(*_args, **_kwargs):
+        <dl class="heading0">
+            <dt id="top"><a>getoptify</a></dt>
+            <dd>
+                <dl class="heading1">
+                    <dt id="overview">Overview</dt>
+                    <dd>
+                        <p>
+                            This project allows getopt parsing followed by deparsing, 
+                            e.g. for allowing abbreviations with 
+                            <a href="https://click.palletsprojects.com/">click</a>
+                            or to enforce parser simplicity.
+                        </p>
+                    </dd>
+                    <dt id="links">Links</dt>
+                    <dd id="linksCorpus"></dd>
+                    <dt id="install">Installation</dt>
+                    <dd id="installCorpus"></dd>
+                    <dt>Functions</dt>
+                    <dd>
+                        <pre class="block"><code>def command(*_args, **_kwargs):
     return functools.partial(decorator, *_args, **_kwargs)
 
 def decorator(old, /, *_args, **_kwargs):
@@ -36,26 +39,32 @@ def process(args=None, shortopts="", longopts=[], allow_argv=True, gnu=True):
     # this function is the heart of getoptify
     # args are parsed using getopt and then converted back into a list of args
     # allow_argv allows to default to sys.argv[1:] if args is None
-    # if gnu then getopt.gnu_getopt is used else getopt.getopt
-            </pre>
-        </code>
-        <h2>Recommended Usage</h2>
-        <code>
-            <pre>
-@getoptify.command(shortopts="h", longopts=["foo", "bar="])
+    # if gnu then getopt.gnu_getopt is used else getopt.getopt</code></pre>
+                    </dd>
+                    <dt id="usage">Recommended Usage</dt>
+                    <dd id="usageCorpus">
+                        <pre class="block"><code>@getoptify.command(shortopts="h", longopts=["foo", "bar="])
 def example(args=None):
     ...
-    # here internal parsing
-            
-            </pre>
-        </code>
-        <div id="testing"></div>
-        <div id="license"></div>
-        <div id="links"></div>
-        <div id="credits"></div>
-        <script src="https://www.johannes-programming.online/script.js"></script>
-        <script>
-            setupBasicProject();
-        </script>
+    # here internal parsing</code></pre>
+                    </dd>
+                    <dt id="testing">Testing</dt>
+                    <dd id="testingCorpus"></dd>
+                    <dt id="license">License</dt>
+                    <dd id="licenseCorpus"></dd>
+                    <dt id="impressum">Impressum</dt>
+                    <dd id="impressumCorpus"></dd>
+                </dl>
+            </dd>
+        </dl>
     </body>
+    <script src="https://www.johannes-programming.online/script.js"></script>
+    <script>
+        setupLinksCorpus("getoptify");
+        setupInstallCorpus("getoptify");
+        setupTestingCorpus("getoptify");
+        setupLicenseCorpus("getoptify");
+        setupImpressumCorpus("getoptify");
+        addMetaAndLinkTags();
+    </script>
 </html>
