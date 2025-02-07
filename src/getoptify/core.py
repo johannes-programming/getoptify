@@ -8,10 +8,13 @@ __all__ = ["command", "decorator", "process"]
 
 
 def command(*_args: Any, **_kwargs: Any) -> functools.partial:
+    "This function returns a decorator with set arguments."
     return functools.partial(decorator, *_args, **_kwargs)
 
 
 def decorator(old: Callable, /, *_args: Any, **_kwargs: Any) -> types.FunctionType:
+    "This decorator is the precursor of commands."
+
     @functools.wraps(old)
     def new(args: Any = None):
         args = process(args, *_args, **_kwargs)
@@ -27,6 +30,7 @@ def process(
     allow_argv: Any = True,
     gnu: Any = True,
 ) -> List[str]:
+    "This function preparses args."
     if allow_argv and args is None:
         args = sys.argv[1:]
     args = [str(x) for x in args]
